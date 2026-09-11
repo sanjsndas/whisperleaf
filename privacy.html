@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Whisperleaf · Privacy Policy · Garden Stories</title>
+  <meta name="description" content="Privacy policy for Whisperleaf Garden Stories – how we care for your data like a well-tended garden." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:opsz,wght@14..32,300..700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: #fcf8f0;
+      color: #1e2b1c;
+      font-family: "Inter", system-ui, sans-serif;
+      line-height: 1.6;
+      padding: 0 1.5rem;
+    }
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    /* brand */
+    .brand {
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+      text-decoration: none;
+      color: #1e2b1c;
+    }
+    .brand-icon {
+      font-size: 1.8rem;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      background: #2b4a2a;
+      color: #f6efe3;
+      width: 2.6rem;
+      height: 2.6rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50% 50% 50% 0;
+      transform: rotate(-2deg);
+      font-family: "Instrument Serif", serif;
+    }
+    .brand-name {
+      font-family: "Instrument Serif", serif;
+      font-size: 1.8rem;
+      letter-spacing: -0.01em;
+      font-weight: 400;
+    }
+    .brand-tagline {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      opacity: 0.55;
+      font-weight: 400;
+      margin-left: 0.25rem;
+      border-left: 1px solid #c0b7a2;
+      padding-left: 0.75rem;
+    }
+    /* nav */
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.2rem 0 0.8rem;
+      border-bottom: 1px solid #ddd6c4;
+    }
+    .nav-links {
+      display: flex;
+      gap: 1.8rem;
+      font-size: 0.85rem;
+      font-weight: 450;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: #2b3d28;
+      border-bottom: 2px solid transparent;
+      padding-bottom: 0.2rem;
+      transition: border 0.2s;
+    }
+    .nav-links a:hover {
+      border-bottom-color: #7c8f6e;
+    }
+    .nav-search {
+      background: #ede7da;
+      border-radius: 40px;
+      padding: 0.2rem 0.8rem 0.2rem 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .nav-search input {
+      border: none;
+      background: transparent;
+      font-family: "Inter", sans-serif;
+      font-size: 0.75rem;
+      padding: 0.4rem 0;
+      width: 120px;
+      outline: none;
+    }
+    .nav-search input::placeholder {
+      color: #5f6b53;
+      opacity: 0.6;
+    }
+
+    /* privacy hero */
+    .privacy-hero {
+      margin: 3rem 0 2rem;
+      border-left: 4px solid #b2a68b;
+      padding-left: 1.8rem;
+      max-width: 780px;
+    }
+    .privacy-hero h1 {
+      font-family: "Instrument Serif", serif;
+      font-size: 3rem;
+      font-weight: 400;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: #1b2a19;
+    }
+    .privacy-hero p {
+      font-size: 1.1rem;
+      color: #3d4f37;
+      margin-top: 0.5rem;
+      max-width: 600px;
+    }
+
+    /* main content */
+    .privacy-content {
+      background: #f5efe3;
+      border: 1px solid #dfd6c2;
+      padding: 2.4rem 2.8rem 3rem;
+      margin: 2rem 0 3rem;
+    }
+    .privacy-content h2 {
+      font-family: "Instrument Serif", serif;
+      font-weight: 400;
+      font-size: 2.2rem;
+      margin-top: 2.2rem;
+      border-bottom: 1px solid #cbbc9e;
+      padding-bottom: 0.3rem;
+      color: #1b2a19;
+    }
+    .privacy-content h2:first-of-type {
+      margin-top: 0;
+    }
+    .privacy-content h3 {
+      font-family: "Instrument Serif", serif;
+      font-weight: 400;
+      font-size: 1.6rem;
+      margin-top: 1.8rem;
+      color: #2a4024;
+    }
+    .privacy-content p {
+      margin: 0.8rem 0;
+      color: #1e2b1c;
+    }
+    .privacy-content ul {
+      margin: 0.8rem 0 1.2rem 1.8rem;
+      list-style: square;
+      color: #1e2b1c;
+    }
+    .privacy-content ul li {
+      margin: 0.4rem 0;
+    }
+    .privacy-content .highlight-box {
+      background: #eae1d0;
+      padding: 1.4rem 2rem;
+      border-left: 6px solid #7f946c;
+      margin: 1.5rem 0;
+    }
+    .privacy-content .highlight-box p {
+      margin: 0.2rem 0;
+      font-size: 0.95rem;
+    }
+    .privacy-content .small-note {
+      font-size: 0.85rem;
+      color: #3d5535;
+      border-top: 1px dashed #b7a889;
+      padding-top: 1.2rem;
+      margin-top: 1.5rem;
+    }
+
+    /* footer */
+    .footer-note {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      background: #eae1d0;
+      padding: 2.5rem 2.5rem;
+      margin: 2.5rem 0 1.5rem;
+      border-radius: 0;
+      gap: 2rem;
+    }
+    .footer-note .col {
+      flex: 1 1 160px;
+    }
+    .footer-note .col h4 {
+      font-family: "Instrument Serif", serif;
+      font-weight: 400;
+      font-size: 1.4rem;
+      border-bottom: 1px solid #b7a889;
+      padding-bottom: 0.2rem;
+      margin-bottom: 0.6rem;
+    }
+    .footer-note .col p {
+      font-size: 0.9rem;
+      color: #31462c;
+    }
+    .footer-note .col a {
+      display: block;
+      color: #1b2a19;
+      text-decoration: none;
+      font-size: 0.85rem;
+      padding: 0.2rem 0;
+    }
+    .footer-note .col a:hover {
+      text-decoration: underline;
+    }
+
+    .legal-footer {
+      border-top: 1px solid #cfc3ac;
+      padding: 1.8rem 0 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      font-size: 0.7rem;
+      color: #4b5f42;
+      gap: 1rem;
+    }
+    .legal-footer a {
+      color: #364b31;
+      text-decoration: none;
+      margin-right: 1.2rem;
+    }
+    .legal-footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 800px) {
+      .privacy-content {
+        padding: 1.8rem 1.5rem;
+      }
+      .privacy-hero h1 {
+        font-size: 2.4rem;
+      }
+      .nav {
+        flex-wrap: wrap;
+        gap: 0.8rem;
+      }
+      .nav-links {
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+      .footer-note {
+        flex-direction: column;
+      }
+    }
+    @media (max-width: 480px) {
+      body {
+        padding: 0 0.8rem;
+      }
+      .privacy-hero h1 {
+        font-size: 2rem;
+      }
+      .brand-name {
+        font-size: 1.4rem;
+      }
+      .brand-tagline {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Navigation (same as homepage) -->
+    <nav class="nav">
+      <a href="#" class="brand">
+        <span class="brand-icon">🌱</span>
+        <span class="brand-name">Whisperleaf</span>
+        <span class="brand-tagline">garden stories</span>
+      </a>
+      <div class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="terms.html">Terms Of Privacy</a></li>
+        <li><a href="privacy.html" style="border-bottom-color:#7c8f6e;">Privacy Policy</a></li>
+        <li><a href="cookies.html">Cookies Policy</a></li> 
+        <li><a href="disclaimer.html">Disclaimer</a></li>
+        <li><a href="categories.html">Categories</a></li>
+      </div>
+      <div class="nav-search">
+        <input type="text" placeholder="search soil &amp; stem" />
+        <span style="opacity:0.5;">⌕</span>
+      </div>
+    </nav>
+
+    <!-- Privacy hero -->
+    <div class="privacy-hero">
+      <h1>Privacy Policy</h1>
+      <p>Your data is like a seedling — handled with care, respect, and transparency. Here’s how we tend to it.</p>
+    </div>
+
+    <!-- Main privacy content -->
+    <div class="privacy-content">
+      <h2>Our commitment</h2>
+      <p>At Whisperleaf Garden Stories, we believe that privacy is the soil of trust. This policy outlines what information we collect, how we use it, and the choices you have. We keep our practices simple, secure, and in harmony with your rights.</p>
+
+      <div class="highlight-box">
+        <p><strong>🌿 In short:</strong> We collect only what we need to serve you better. We never sell your data. We never share it unnecessarily. And we’re always happy to answer your questions.</p>
+      </div>
+
+      <h2>Information we collect</h2>
+      <p>We collect information that you voluntarily provide to us, such as:</p>
+      <ul>
+        <li><strong>Contact details</strong> — name, email address, and any message you send via our forms.</li>
+        <li><strong>Newsletter subscriptions</strong> — email address and preferences.</li>
+        <li><strong>Comments and submissions</strong> — stories, essays, or garden notes you share with us.</li>
+        <li><strong>Usage data</strong> — anonymous analytics to understand how our readers interact with the site (e.g., pages visited, time spent).</li>
+      </ul>
+      <p>We do not collect sensitive personal data unless you explicitly provide it (e.g., in a story submission).</p>
+
+      <h2>How we use your information</h2>
+      <p>We use your data to:</p>
+      <ul>
+        <li>Respond to your inquiries and messages.</li>
+        <li>Send you occasional newsletters (only if you’ve opted in).</li>
+        <li>Improve our content and reader experience.</li>
+        <li>Process submissions and collaborations.</li>
+      </ul>
+      <p>We never use your data for automated decision-making or profiling that affects you.</p>
+
+      <h2>Cookies &amp; analytics</h2>
+      <p>We use minimal cookies to enhance your experience. These include:</p>
+      <ul>
+        <li>Essential cookies for site functionality.</li>
+        <li>Performance cookies (anonymous) to understand page popularity.</li>
+      </ul>
+      <p>You can manage your cookie preferences at any time. For more details, see our <a href="cookies.html" style="color:#2b4a2a; text-decoration:underline;">Cookies Policy</a>.</p>
+
+      <h2>Data security</h2>
+      <p>We treat your data with the same care we give to our garden beds. All information is stored securely, and access is limited to essential team members. We use industry-standard encryption and regularly review our practices.</p>
+
+      <h2>Your rights</h2>
+      <p>You have the right to:</p>
+      <ul>
+        <li>Access the personal data we hold about you.</li>
+        <li>Request correction or deletion of your data.</li>
+        <li>Withdraw consent for marketing communications.</li>
+        <li>Lodge a complaint with your local data protection authority.</li>
+      </ul>
+      <p>To exercise these rights, simply <a href="contact.html" style="color:#2b4a2a; text-decoration:underline;">contact us</a> — we’ll respond within 2–3 business days.</p>
+
+      <h2>Third-party links</h2>
+      <p>Our articles may contain links to external sites. We are not responsible for their privacy practices — we encourage you to read their policies.</p>
+
+      <h2>Updates to this policy</h2>
+      <p>We may update this policy occasionally to reflect changes in our practices or legal requirements. We’ll always post the latest version here, with the effective date below.</p>
+
+      <div class="small-note">
+        <p><strong>Effective date:</strong> 1 March 2026 · <strong>Last reviewed:</strong> March 2026</p>
+        <p>If you have any questions, please reach out to us at <a href="mailto:privacy@whisperleaf.com" style="color:#2b4a2a; text-decoration:underline;">privacy@whisperleaf.com</a>.</p>
+      </div>
+    </div>
+
+    <!-- Footer (same as homepage) -->
+    <div class="footer-note">
+      <div class="col">
+        <h4>Whisperleaf</h4>
+        <p style="max-width:200px;">A journal for those who find meaning in the garden. Essays, guides, and stories from the soil.</p>
+      </div>
+      <div class="col">
+        <h4>Read</h4>
+        <a href="#">Field Guide</a>
+        <a href="#">Essays</a>
+        <a href="#">Plant Notes</a>
+        <a href="#">Archive</a>
+      </div>
+      <div class="col">
+        <h4>Topics</h4>
+        <a href="#">Soil Science</a>
+        <a href="#">Vegetable Growing</a>
+        <a href="#">Perennial Borders</a>
+        <a href="#">Seasonal Almanac</a>
+      </div>
+      <div class="col">
+        <h4>About</h4>
+        <a href="#">Our Story</a>
+        <a href="#">Authors</a>
+        <a href="#">Editorial Policy</a>
+        <a href="#">Contact</a>
+      </div>
+      <div class="col">
+        <h4>Resources</h4>
+        <a href="#">Planting Calendar</a>
+        <a href="#">Soil Testing Guide</a>
+        <a href="#">Book List</a>
+        <a href="#">FAQ</a>
+      </div>
+    </div>
+
+    <div class="legal-footer">
+      <span>© 2026 Whisperleaf Garden Stories</span>
+      <span>
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Cookies</a>
+        <a href="#">Disclaimer</a>
+        <a href="#">Sitemap</a>
+      </span>
+    </div>
+  </div>
+
+  <script>
+    // subtle search interaction
+    document.querySelector('.nav-search input')?.addEventListener('focus', function() {
+      this.placeholder = 'find a story...';
+    });
+    document.querySelector('.nav-search input')?.addEventListener('blur', function() {
+      this.placeholder = 'search soil & stem';
+    });
+    console.log('Whisperleaf · Privacy Policy — cultivated with care.');
+  </script>
+</body>
+</html>

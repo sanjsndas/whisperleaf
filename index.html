@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Whisperleaf Garden Stories · A Journal of Cultivation & Wonder</title>
+  <meta name="description" content="Whisperleaf is a premium gardening journal where practical wisdom meets the poetry of plants. Essays, guides, and stories from the soil." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:opsz,wght@14..32,300..700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: #fcf8f0;
+      color: #1e2b1c;
+      font-family: "Inter", system-ui, sans-serif;
+      line-height: 1.6;
+      padding: 0 1.5rem;
+    }
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    /* brand */
+    .brand {
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+      text-decoration: none;
+      color: #1e2b1c;
+    }
+    .brand-icon {
+      font-size: 1.8rem;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      background: #2b4a2a;
+      color: #f6efe3;
+      width: 2.6rem;
+      height: 2.6rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50% 50% 50% 0;
+      transform: rotate(-2deg);
+      font-family: "Instrument Serif", serif;
+    }
+    .brand-name {
+      font-family: "Instrument Serif", serif;
+      font-size: 1.8rem;
+      letter-spacing: -0.01em;
+      font-weight: 400;
+    }
+    .brand-tagline {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      opacity: 0.55;
+      font-weight: 400;
+      margin-left: 0.25rem;
+      border-left: 1px solid #c0b7a2;
+      padding-left: 0.75rem;
+    }
+    /* nav */
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.2rem 0 0.8rem;
+      border-bottom: 1px solid #ddd6c4;
+    }
+    .nav-links {
+      display: flex;
+      gap: 1.8rem;
+      font-size: 0.85rem;
+      font-weight: 450;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: #2b3d28;
+      border-bottom: 2px solid transparent;
+      padding-bottom: 0.2rem;
+      transition: border 0.2s;
+    }
+    .nav-links a:hover {
+      border-bottom-color: #7c8f6e;
+    }
+    .nav-search {
+      background: #ede7da;
+      border-radius: 40px;
+      padding: 0.2rem 0.8rem 0.2rem 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .nav-search input {
+      border: none;
+      background: transparent;
+      font-family: "Inter", sans-serif;
+      font-size: 0.75rem;
+      padding: 0.4rem 0;
+      width: 120px;
+      outline: none;
+    }
+    .nav-search input::placeholder {
+      color: #5f6b53;
+      opacity: 0.6;
+    }
+    /* unique homepage architecture: "The Field Guide" – editorial grid with a narrative flow */
+    .field-note {
+      margin: 2.8rem 0 3.2rem;
+      border-left: 4px solid #b2a68b;
+      padding-left: 1.8rem;
+      max-width: 760px;
+    }
+    .field-note h1 {
+      font-family: "Instrument Serif", serif;
+      font-size: 3.4rem;
+      font-weight: 400;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: #1b2a19;
+    }
+    .field-note p {
+      font-size: 1.15rem;
+      color: #3d4f37;
+      margin-top: 0.5rem;
+      max-width: 600px;
+    }
+
+    /* discovery grid — horizontal editorial cards with variation */
+    .discovery-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 1.8rem;
+      margin: 2.5rem 0 3.5rem;
+    }
+    .discovery-card {
+      background: #f5efe3;
+      border-radius: 0px;
+      padding: 1.8rem 1.8rem 1.8rem;
+      transition: background 0.2s;
+      border: 1px solid #dfd6c2;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .discovery-card.featured {
+      grid-row: span 2;
+      background: #eae1d0;
+      border: none;
+      padding: 2.4rem 2.2rem;
+    }
+    .discovery-card .card-category {
+      font-size: 0.6rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #6b7d5c;
+      border-bottom: 1px solid #cbbc9e;
+      padding-bottom: 0.3rem;
+      margin-bottom: 0.8rem;
+      display: inline-block;
+    }
+    .discovery-card h3 {
+      font-family: "Instrument Serif", serif;
+      font-size: 1.7rem;
+      font-weight: 400;
+      line-height: 1.15;
+      margin: 0.2rem 0 0.4rem;
+    }
+    .discovery-card.featured h3 {
+      font-size: 2.8rem;
+      max-width: 90%;
+    }
+    .discovery-card .meta {
+      font-size: 0.75rem;
+      color: #4b5d41;
+      display: flex;
+      gap: 0.8rem;
+      margin-top: 1rem;
+      border-top: 1px dashed #cbbc9e;
+      padding-top: 0.8rem;
+    }
+    .discovery-card .excerpt {
+      font-size: 0.9rem;
+      color: #2d3f29;
+      margin: 0.5rem 0 1rem;
+      line-height: 1.5;
+    }
+    .btn-ghost {
+      background: transparent;
+      border: 1px solid #7b8d69;
+      padding: 0.4rem 1.2rem;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #1e2b1c;
+      border-radius: 40px;
+      width: fit-content;
+      transition: 0.2s;
+      cursor: default;
+      font-weight: 500;
+    }
+    .btn-ghost:hover {
+      background: #2b4a2a;
+      color: #f5efe3;
+      border-color: #2b4a2a;
+    }
+
+    /* infographic / visual index */
+    .visual-index {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      background: #f2ecdf;
+      padding: 2.2rem 2.5rem;
+      margin: 3rem 0;
+      border-top: 2px solid #b7ab93;
+      border-bottom: 2px solid #b7ab93;
+      align-items: center;
+    }
+    .visual-index figure {
+      flex: 1 1 220px;
+      margin: 0;
+    }
+    .visual-index img {
+      width: 100%;
+      height: auto;
+      display: block;
+      filter: grayscale(0.2) contrast(1.05);
+      border-radius: 2px;
+      border: 1px solid #d4c9b4;
+    }
+    .visual-index .index-text {
+      flex: 2 1 300px;
+    }
+    .visual-index .index-text h2 {
+      font-family: "Instrument Serif", serif;
+      font-weight: 400;
+      font-size: 2rem;
+      letter-spacing: -0.01em;
+    }
+    .visual-index .index-text p {
+      font-size: 0.95rem;
+      color: #364b31;
+      max-width: 450px;
+    }
+
+    /* category explorer — not generic cards */
+    .category-walk {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem 3.5rem;
+      border-bottom: 1px solid #d2c8b2;
+      padding-bottom: 3rem;
+      margin-bottom: 2.5rem;
+    }
+    .category-item {
+      display: flex;
+      flex-direction: column;
+    }
+    .category-item .cat-label {
+      font-size: 0.6rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #4f6443;
+    }
+    .category-item .cat-name {
+      font-family: "Instrument Serif", serif;
+      font-size: 1.8rem;
+      font-weight: 400;
+      border-bottom: 2px solid transparent;
+      transition: border 0.2s;
+      cursor: default;
+    }
+    .category-item .cat-name:hover {
+      border-bottom-color: #667a55;
+    }
+    .category-item .cat-desc {
+      font-size: 0.8rem;
+      color: #44593b;
+      max-width: 160px;
+      margin-top: 0.2rem;
+    }
+
+    /* long-form article preview */
+    .featured-article {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 3rem;
+      margin: 3.5rem 0 4rem;
+      align-items: start;
+    }
+    .featured-article .article-visual img {
+      width: 100%;
+      height: auto;
+      border: 1px solid #cfc3ac;
+      filter: contrast(1.02) saturate(0.95);
+    }
+    .featured-article .article-content h2 {
+      font-family: "Instrument Serif", serif;
+      font-size: 2.6rem;
+      font-weight: 400;
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+    }
+    .featured-article .article-content .subhead {
+      font-size: 1rem;
+      color: #445f3a;
+      border-left: 3px solid #9aac85;
+      padding-left: 1rem;
+      margin: 0.5rem 0 0.8rem;
+    }
+    .featured-article .article-content p {
+      margin: 1rem 0;
+      color: #233021;
+      max-width: 500px;
+    }
+    .featured-article .article-content .read-more {
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      border-bottom: 2px solid #a7b895;
+      padding-bottom: 0.1rem;
+      text-decoration: none;
+      color: #1b2a19;
+    }
+    .featured-article .article-content .read-more:hover {
+      border-bottom-color: #3b5532;
+    }
+
+    /* author & newsletter */
+    .footer-note {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      background: #eae1d0;
+      padding: 2.5rem 2.5rem;
+      margin: 2.5rem 0 1.5rem;
+      border-radius: 0;
+      gap: 2rem;
+    }
+    .footer-note .col {
+      flex: 1 1 160px;
+    }
+    .footer-note .col h4 {
+      font-family: "Instrument Serif", serif;
+      font-weight: 400;
+      font-size: 1.4rem;
+      border-bottom: 1px solid #b7a889;
+      padding-bottom: 0.2rem;
+      margin-bottom: 0.6rem;
+    }
+    .footer-note .col p {
+      font-size: 0.9rem;
+      color: #31462c;
+    }
+    .footer-note .col a {
+      display: block;
+      color: #1b2a19;
+      text-decoration: none;
+      font-size: 0.85rem;
+      padding: 0.2rem 0;
+    }
+    .footer-note .col a:hover {
+      text-decoration: underline;
+    }
+
+    /* legal footer */
+    .legal-footer {
+      border-top: 1px solid #cfc3ac;
+      padding: 1.8rem 0 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      font-size: 0.7rem;
+      color: #4b5f42;
+      gap: 1rem;
+    }
+    .legal-footer a {
+      color: #364b31;
+      text-decoration: none;
+      margin-right: 1.2rem;
+    }
+    .legal-footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* article page style (sample) */
+    .article-page {
+      max-width: 820px;
+      margin: 2.5rem auto;
+    }
+    .article-page h1 {
+      font-family: "Instrument Serif", serif;
+      font-size: 3.4rem;
+      font-weight: 400;
+      line-height: 1.1;
+    }
+    .article-page .byline {
+      display: flex;
+      gap: 1.2rem;
+      border-top: 1px solid #d4c8b2;
+      border-bottom: 1px solid #d4c8b2;
+      padding: 0.6rem 0;
+      margin: 1rem 0 1.8rem;
+      font-size: 0.85rem;
+      color: #3a5033;
+    }
+    .article-page h2 {
+      font-family: "Instrument Serif", serif;
+      font-weight: 400;
+      font-size: 2rem;
+      margin: 2rem 0 0.5rem;
+    }
+    .article-page h3 {
+      font-weight: 500;
+      font-size: 1.2rem;
+      margin: 1.4rem 0 0.2rem;
+      letter-spacing: -0.01em;
+    }
+    .article-page ul,
+    .article-page ol {
+      margin: 0.8rem 0 1.2rem 1.5rem;
+    }
+    .article-page li {
+      margin-bottom: 0.4rem;
+    }
+    .article-page .tip-box {
+      background: #f2ecdf;
+      padding: 1.2rem 1.8rem;
+      border-left: 6px solid #7f946c;
+      margin: 1.8rem 0;
+    }
+    .article-page table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+    }
+    .article-page td,
+    .article-page th {
+      border: 1px solid #c2b8a2;
+      padding: 0.6rem 0.8rem;
+      text-align: left;
+    }
+    .article-page th {
+      background: #e3dac8;
+      font-weight: 500;
+    }
+
+    /* responsive */
+    @media (max-width: 800px) {
+      .discovery-grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+      }
+      .discovery-card.featured {
+        grid-row: auto;
+      }
+      .featured-article {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+      .field-note h1 {
+        font-size: 2.6rem;
+      }
+      .nav {
+        flex-wrap: wrap;
+        gap: 0.8rem;
+      }
+      .nav-links {
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+      .visual-index {
+        flex-direction: column;
+        padding: 1.5rem;
+      }
+      .footer-note {
+        flex-direction: column;
+      }
+    }
+    @media (max-width: 480px) {
+      body {
+        padding: 0 0.8rem;
+      }
+      .field-note h1 {
+        font-size: 2.2rem;
+      }
+      .brand-name {
+        font-size: 1.4rem;
+      }
+      .brand-tagline {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- Navigation -->
+    <nav class="nav">
+      <a href="#" class="brand">
+        <span class="brand-icon">🌱</span>
+        <span class="brand-name">Whisperleaf</span>
+        <span class="brand-tagline">garden stories</span>
+      </a>
+      <div class="nav-links">
+         <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="terms.html">Terms Of Privacy</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+					<li><a href="cookies.html">Cookies Policy</a></li> 
+                    <li><a href="disclaimer.html">Disclaimer</a></li>
+                    <li><a href="categories.html">Categories</a></li>
+      </div>
+      <div class="nav-search">
+        <input type="text" placeholder="search soil &amp; stem" />
+        <span style="opacity:0.5;">⌕</span>
+      </div>
+    </nav>
+
+    <!-- Homepage architecture: "Field Guide" – not a typical hero -->
+    <div class="field-note">
+      <h1>Field notes from the garden</h1>
+      <p>Where cultivation meets contemplation — essays, guides, and quiet observations from the soil.</p>
+    </div>
+
+    <!-- Discovery Grid (Editorial cards with variation) -->
+    <div class="discovery-grid">
+      <div class="discovery-card featured">
+        <div>
+          <span class="card-category">⟡ deep read</span>
+          <h3>The language of leaves: what your plants are telling you</h3>
+          <div class="excerpt">A guide to reading chlorosis, droop, and the silent whispers of foliage. Understanding plant stress before it becomes a diagnosis.</div>
+          <div class="meta"><span>E. Marchetti</span> <span>· 12 min read</span> <span>· 5 Apr 2026</span></div>
+        </div>
+        <div style="margin-top: 1.2rem;"><span class="btn-ghost">continue reading</span></div>
+      </div>
+      <div class="discovery-card">
+        <span class="card-category">guide</span>
+        <h3>No-dig beds</h3>
+        <div class="excerpt">Build living soil in 4 layers — the lazy gardener’s path to abundance.</div>
+        <div class="meta"><span>R. Hayes</span> <span>· 8 min</span></div>
+      </div>
+      <div class="discovery-card">
+        <span class="card-category">seasonal</span>
+        <h3>Spring equinox</h3>
+        <div class="excerpt">Rituals for the first sowing: peas, poppies, and the return of light.</div>
+        <div class="meta"><span>L. Wells</span> <span>· 6 min</span></div>
+      </div>
+      <div class="discovery-card">
+        <span class="card-category">practical</span>
+        <h3>Compost in an apartment</h3>
+        <div class="excerpt">Vermiculture, bokashi, and the art of small-space breakdown.</div>
+        <div class="meta"><span>M. Cole</span> <span>· 9 min</span></div>
+      </div>
+      <div class="discovery-card">
+        <span class="card-category">profile</span>
+        <h3>the seed keeper</h3>
+        <div class="excerpt">One woman’s mission to save heirloom beans — and the stories they carry.</div>
+        <div class="meta"><span>E. Marchetti</span> <span>· 11 min</span></div>
+      </div>
+    </div>
+
+    <!-- Infographic / visual index -->
+    <div class="visual-index">
+      <figure>
+        <!-- Infographic: 4 seasons planting chart (represented as a stylised image) -->
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='240' viewBox='0 0 400 240'%3E%3Crect width='400' height='240' fill='%23eae1d0'/%3E%3Ccircle cx='80' cy='120' r='36' fill='%23647a52' opacity='0.4'/%3E%3Ccircle cx='200' cy='120' r='36' fill='%23819f67' opacity='0.3'/%3E%3Ccircle cx='320' cy='120' r='36' fill='%23a6b88a' opacity='0.3'/%3E%3Ctext x='60' y='185' font-family='Inter' font-size='12' fill='%232b4028'%3ESpring%3C/text%3E%3Ctext x='180' y='185' font-family='Inter' font-size='12' fill='%232b4028'%3ESummer%3C/text%3E%3Ctext x='300' y='185' font-family='Inter' font-size='12' fill='%232b4028'%3EAutumn%3C/text%3E%3Ctext x='60' y='75' font-family='Instrument Serif' font-size='20' fill='%232b4028'%3Eplanting%3C/text%3E%3Ctext x='200' y='75' font-family='Instrument Serif' font-size='20' fill='%232b4028'%3Eharvest%3C/text%3E%3Ctext x='320' y='75' font-family='Instrument Serif' font-size='20' fill='%232b4028'%3Erest%3C/text%3E%3C/svg%3E"
+             alt="Seasonal planting and harvest rhythm infographic" />
+      </figure>
+      <div class="index-text">
+        <h2>The garden’s year in rhythm</h2>
+        <p>From first thaw to last leaf — a visual guide to the flow of growth, rest, and renewal. Each season holds its own wisdom.</p>
+      </div>
+    </div>
+
+    <!-- Category walk — unique navigation by topic -->
+    <div class="category-walk">
+      <div class="category-item"><span class="cat-label">explore by</span><span class="cat-name">Soil &amp; Science</span><span class="cat-desc">microbes, structure, and the life beneath</span></div>
+      <div class="category-item"><span class="cat-label">explore by</span><span class="cat-name">Edible Gardens</span><span class="cat-desc">vegetables, fruit, and kitchen plots</span></div>
+      <div class="category-item"><span class="cat-label">explore by</span><span class="cat-name">Flower Lore</span><span class="cat-desc">perennials, annuals, and the poetry of blooms</span></div>
+      <div class="category-item"><span class="cat-label">explore by</span><span class="cat-name">Garden Design</span><span class="cat-desc">structure, color, and wild edges</span></div>
+      <div class="category-item"><span class="cat-label">explore by</span><span class="cat-name">Seasonal Almanac</span><span class="cat-desc">monthly tasks and celestial cues</span></div>
+    </div>
+
+    <!-- Featured long-form article (with image) -->
+    <div class="featured-article">
+      <div class="article-visual">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400' viewBox='0 0 600 400'%3E%3Crect width='600' height='400' fill='%23d8cdb6'/%3E%3Cpath d='M120 180 Q200 120 300 190 T480 180 L480 320 Q300 340 120 320 Z' fill='%23647a52' opacity='0.4'/%3E%3Ccircle cx='280' cy='180' r='24' fill='%237d946b' opacity='0.5'/%3E%3Ccircle cx='380' cy='200' r='20' fill='%237d946b' opacity='0.4'/%3E%3Ctext x='180' y='280' font-family='Instrument Serif' font-size='26' fill='%231e2b1c'%3Ea garden%3C/text%3E%3Ctext x='340' y='280' font-family='Instrument Serif' font-size='26' fill='%231e2b1c'%3Eawakening%3C/text%3E%3C/svg%3E"
+             alt="A soft illustration of a garden awakening" />
+      </div>
+      <div class="article-content">
+        <span style="font-size:0.7rem; text-transform:uppercase; letter-spacing:0.08em; color:#4a6141;">featured essay</span>
+        <h2>When the soil remembers</h2>
+        <div class="subhead">A meditation on the first spring dig, and what we inherit from the earth.</div>
+        <p>There is a particular scent to overturned earth in March — cold, mineral, and full of potential. In this personal essay, we explore the memory of gardens past and the quiet hope of each new season.</p>
+        <a href="#" class="read-more">read the full essay →</a>
+        <div style="margin-top: 1.4rem; display: flex; gap: 0.8rem; font-size:0.8rem; color:#41593a;">
+          <span>words by L. Wells</span> <span>·</span> <span>photograph by A. Roux</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer (premium, unique) -->
+    <div class="footer-note">
+      <div class="col">
+        <h4>Whisperleaf</h4>
+        <p style="max-width:200px;">A journal for those who find meaning in the garden. Essays, guides, and stories from the soil.</p>
+      </div>
+      <div class="col">
+        <h4>Read</h4>
+        <a href="#">Field Guide</a>
+        <a href="#">Essays</a>
+        <a href="#">Plant Notes</a>
+        <a href="#">Archive</a>
+      </div>
+      <div class="col">
+        <h4>Topics</h4>
+        <a href="#">Soil Science</a>
+        <a href="#">Vegetable Growing</a>
+        <a href="#">Perennial Borders</a>
+        <a href="#">Seasonal Almanac</a>
+      </div>
+      <div class="col">
+        <h4>About</h4>
+        <a href="#">Our Story</a>
+        <a href="#">Authors</a>
+        <a href="#">Editorial Policy</a>
+        <a href="#">Contact</a>
+      </div>
+      <div class="col">
+        <h4>Resources</h4>
+        <a href="#">Planting Calendar</a>
+        <a href="#">Soil Testing Guide</a>
+        <a href="#">Book List</a>
+        <a href="#">FAQ</a>
+      </div>
+    </div>
+
+    <!-- Legal & footer links -->
+    <div class="legal-footer">
+      <span>© 2026 Whisperleaf Garden Stories</span>
+      <span>
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Cookies</a>
+        <a href="#">Disclaimer</a>
+        <a href="#">Sitemap</a>
+      </span>
+    </div>
+
+    <!-- Sample long-form article content (hidden but present for structure) -->
+    <div style="display: none;">
+      <!-- this is a complete article for the page "the language of leaves" -->
+      <article class="article-page">
+        <h1>The language of leaves: what your plants are telling you</h1>
+        <div class="byline"><span>By E. Marchetti</span> <span>· April 5, 2026</span> <span>· 12 min read</span></div>
+        <p>Plants communicate through colour, texture, and posture. A leaf that curls inward speaks of thirst; a yellow margin whispers of nutrient hunger. This guide helps you become fluent in the subtle signals of your garden.</p>
+        <h2>Chlorosis: the pale whisper</h2>
+        <p>When leaves turn yellow between green veins, iron or magnesium may be locked in the soil. A foliar spray of diluted seaweed can often restore the green within days.</p>
+        <h2>Droop and turgor</h2>
+        <p>Limp leaves in the morning suggest root stress; limp leaves in the afternoon are often a natural response to heat. Learn the rhythm of your plants' daily posture.</p>
+        <div class="tip-box"><strong>🌿 Expert note:</strong> Always check the soil before watering. The top inch should feel dry to the touch — but below, moisture may still linger.</div>
+        <h2>Common stress signals</h2>
+        <table>
+          <tr><th>Symptom</th><th>Possible cause</th><th>Action</th></tr>
+          <tr><td>Brown leaf tips</td><td>Underwatering or fluoride</td><td>Water deeply, use filtered water</td></tr>
+          <tr><td>Yellow lower leaves</td><td>Nitrogen deficiency</td><td>Apply compost tea</td></tr>
+          <tr><td>Curled leaves</td><td>Pests or heat stress</td><td>Check undersides, shade if needed</td></tr>
+        </table>
+        <p>By observing daily, you build a relationship with your plants that transcends mere care — it becomes a conversation.</p>
+        <h2>Frequently asked questions</h2>
+        <ul>
+          <li><strong>How often should I check my plants?</strong> — At least once a day, preferably in the morning.</li>
+          <li><strong>What is the most common mistake?</strong> — Overwatering. Most plants prefer to dry out between waterings.</li>
+        </ul>
+        <p><em>Continue your learning with our guide to building living soil.</em></p>
+      </article>
+    </div>
+
+    <!-- Additional pages are implied via navigation and footer links — content exists in structure -->
+  </div>
+  <script>
+    // subtle micro-interaction: search placeholder change
+    document.querySelector('.nav-search input')?.addEventListener('focus', function() {
+      this.placeholder = 'find a story...';
+    });
+    document.querySelector('.nav-search input')?.addEventListener('blur', function() {
+      this.placeholder = 'search soil & stem';
+    });
+    // reading progress / scroll effect (lightweight)
+    window.addEventListener('scroll', function() {
+      // no heavy animations, only a subtle class for future enhancement
+    });
+    console.log('Whisperleaf Garden Stories · cultivated with care');
+  </script>
+</body>
+</html>
